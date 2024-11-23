@@ -230,8 +230,17 @@ public:
     {
         out << std::string(tabsArg, '\t') << "<" << node.getName();
 
-        for ( const auto& [name, value] : node.getConstRefAttributes() )
-            out << ", " << name << "=\"" << value << "\"";
+        std::size_t index = 0;
+
+        const auto& attrs = node.getConstRefAttributes();
+
+        for ( const auto& [name, value] : attrs )
+        {
+            out << " " << name << "=\"" << value << "\"";
+
+            if ( ++index not_eq attrs.size() )
+                out << ",";
+        }
 
         out << ">";
 
