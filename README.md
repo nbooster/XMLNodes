@@ -27,7 +27,7 @@ Output:
 <Root>   
   <A> val </A>
 </Root>
-```'''
+```
 
 rather than this:
 ```
