@@ -2,7 +2,7 @@
 A simple and fast C++ header only XML handler library.
 
 Usage:
-```
+```C++
 #include <string>
 #include <XMLNodes.hpp>
 
@@ -38,66 +38,66 @@ if possible, for faster parsing...
 
 API
 
-```
-explicit XMLNode(const std::string& nameArg = "")
+```C++
+explicit XMLNode(const std::string& nameArg = "");
 
-XMLNode(const std::string& nameArg, const std::string& valueArg, const attributesContainerType& attrs)
+XMLNode(const std::string& nameArg, const std::string& valueArg, const attributesContainerType& attrs);
 
-void setName(const std::string& nameArg)
+void setName(const std::string& nameArg);
 
-std::string getName(void) const
+std::string getName(void) const;
 
-void setValue(const std::string& valueArg)
+void setValue(const std::string& valueArg);
 
-std::string getValue(void) const
+std::string getValue(void) const;
 
-void setAttributes(const attributesContainerType& attrs)
+void setAttributes(const attributesContainerType& attrs);
 
-attributesContainerType getAttributes(void)
+attributesContainerType getAttributes(void);
 
-const attributesContainerType& getConstRefAttributes(void) const noexcept
+const attributesContainerType& getConstRefAttributes(void) const noexcept;
 
-void clearAttributes(void)
+void clearAttributes(void);
 
-std::string getAttribute(const std::string& name)
+std::string getAttribute(const std::string& name);
 
-void setAttribute(const std::string& name, const std::string& value)
+void setAttribute(const std::string& name, const std::string& value);
 
-void clearChildren(void)
+void clearChildren(void);
 
-void setChildren(const childrensContainerType& childrenArg)
+void setChildren(const childrensContainerType& childrenArg);
 
-std::size_t getChildrenCount(void) const
+std::size_t getChildrenCount(void) const;
 
-const childrensContainerType& getChildrenConstRef(void) const
+const childrensContainerType& getChildrenConstRef(void) const;
 
-childrensContainerType& getChildrenRef(void) noexcept 
+childrensContainerType& getChildrenRef(void) noexcept;
 
-XMLNode& getChildRefByIndex(const std::size_t index)
+XMLNode& getChildRefByIndex(const std::size_t index);
 
-const XMLNode& getChildConstRefByIndex(const std::size_t index) const
+const XMLNode& getChildConstRefByIndex(const std::size_t index) const;
 
-XMLNode* getChildPtrByName(const std::string& name, std::size_t index = 1)
+XMLNode* getChildPtrByName(const std::string& name, std::size_t index = 1);
 
-void addChild(const XMLNode& nodeArg)
+void addChild(const XMLNode& nodeArg);
 
-XMLNode& addChild(const std::string& name, const std::string& value = "", const attributesContainerType& attrs = {})
+XMLNode& addChild(const std::string& name, const std::string& value = "", const attributesContainerType& attrs = {});
 
-void removeChildByIndex(std::size_t index) 
+void removeChildByIndex(std::size_t index);
 
-void removeChildByName(const std::string& name, std::size_t index = 1)
+void removeChildByName(const std::string& name, std::size_t index = 1);
 
-std::string toString(void) const
+std::string toString(void) const;
 
-void fromString(const std::string& xml)
+void fromString(const std::string& xml);
 
-bool toFile(const std::string& filePath)
+bool toFile(const std::string& filePath);
 
-bool fromFile(const std::string& filePath)
+bool fromFile(const std::string& filePath);
 
-void print(void)
+void print(void);
 
-static void printXML(const XMLNode& node, std::uint16_t tabsArg = 0, std::ostream& out = std::cout)
+static void printXML(const XMLNode& node, std::uint16_t tabsArg = 0, std::ostream& out = std::cout);
 
-static XMLNode parseXML(const std::string& xml)
+static XMLNode parseXML(const std::string& xml);
 ```
